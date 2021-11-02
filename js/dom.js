@@ -24,3 +24,5 @@ const validaciones = document.getElementById("validaciones")
 const usuario = $("#usuario");
 const formProducto = $("#producto");
 const tienda = $("#tienda");
+
+const menu = $("#menu")

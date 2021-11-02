@@ -20,19 +20,11 @@
     box-shadow:0 3px 15px rgba(0, 0, 0, 0.1);
 }
 
-.toggle-header {
+#toggle-header {
     display: none;
-  }
-  
-  .principal-header {
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
-    padding: 1.5rem;
-    justify-content: space-between;
-  }
-  
-  .menu-toggle {
+}
+
+.menu-toggle {
     /* position: relative; */
     font-size: .85rem;
     display: flex;
@@ -65,52 +57,81 @@
     background-color: #222;
 }
 
-.principal-header .header-titulo {
-    font-size: 1.25rem;
-    flex: 2 2;
-    text-align: center;
+.principal-header { 
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    padding: 1.5rem;
+    justify-content: space-between;
+
+    .header-titulo {
+        font-size: 1.25rem;
+        flex: 2 2;
+        text-align: center;
+    }
+    .header-search {
+        flex: 1;
+        margin-left: 3rem;
+    }
+    .header-list {
+        padding-left: 1.2rem;
+        li {
+            display: inline-block;
+        }
+    }
 }
 
-.principal-header .header-search {
-    flex: 1;
-    margin-left: 3rem;
-}
 
 .header-search,.header-list {
     display: none;
 }
-.principal-header .header-list {
-    padding-left: 1.2rem;
+
+.header-list a div {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    top: 5px;
+    transform: translate(-50%);
+}
+.header-list a {
+    display: inline-block;
+    padding: .7em .875em 0;
+    font-size: 17px;
+    position: relative;
 }
 
-  .principal-header .header-list li {
-      display: inline-block;
-  }
-  
-  
-  .header-list a div {
-      position: absolute;
-      top: 0;
-      left: 50%;
-      top: 5px;
-      transform: translate(-50%);
-  }
-  .header-list a {
-      display: inline-block;
-      padding: .7em .875em 0;
-      font-size: 17px;
-      position: relative;
-  }
-  
-  #dark-window {
+.dark-window {
     position: absolute;
     width: 100vw;
     height: 100vh;
-    background-color: #0003;
+    background-color: #000a;
+    z-index: 1000;
+}
+
+.dark-window-cancel, .dark-window {
     visibility: hidden;
-  }
-  
-  .mobile-toggle #dark-window {
-    visibility: visible;
-  }
-  
+}
+
+.mobile-toggle {
+    .dark-window {
+        visibility: visible;
+    }
+    .dark-window-cancel {
+        visibility: visible;
+        position: fixed;
+        left: 75%;
+        top: 5rem;
+        z-index: 1100;
+        transform: rotate(45deg);
+        span {
+            position: absolute;
+            height: 2px;
+            width: 1.75rem;
+            background-color: #fff;
+            // &.cancel-w{}
+            &.cancel-h{
+                transform: rotate(90deg);
+            }
+        }
+    }
+}

@@ -1,3 +1,5 @@
+import './logica2';
+
 tienda.addClass("none");
 formProducto.addClass("none");
 btnRegistro.addClass("none");
@@ -219,9 +221,6 @@ $(function() {
 		e.preventDefault();
 		cerrarSesionFunc();
 	});
-  $(".menu-toggle").click((e)=> {
-    e.preventDefault();
-  });
 })
 
 
