@@ -4,7 +4,6 @@
     background-color: #fff;
     border: none;
     border-radius: 8px;
-    // box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
     padding: 20px 25px;
     width: 396px;
     max-width: 95vw;
@@ -20,18 +19,14 @@
     box-shadow:0 3px 15px rgba(0, 0, 0, 0.1);
 }
 
-#toggle-header {
-    display: none;
-}
+
 
 .menu-toggle {
-    /* position: relative; */
     font-size: .85rem;
     display: flex;
     height: 100%;
     border: 0;
     background-color: #fff;
-    // align-items: flex-end;
     flex: 1 1;
     .bar-icon {
         display: flex;
@@ -49,12 +44,6 @@
         text-align: end;
         display: inline-block;
     }
-}
-.menu-toggle .bar {
-    width: 22px;
-    height: 2px;
-    opacity: 1;
-    background-color: #222;
 }
 
 .principal-header { 
@@ -78,60 +67,99 @@
         li {
             display: inline-block;
         }
+        a {
+            display: inline-block;
+            padding: .7em .875em 0;
+            font-size: 17px;
+            position: relative;
+            div {
+                position: absolute;
+                top: 0;
+                left: 50%;
+                top: 5px;
+                transform: translate(-50%);
+            }
+        }
+    }
+    .header-search,.header-list {
+        display: none;
     }
 }
 
 
-.header-search,.header-list {
-    display: none;
-}
 
-.header-list a div {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    top: 5px;
-    transform: translate(-50%);
-}
-.header-list a {
-    display: inline-block;
-    padding: .7em .875em 0;
-    font-size: 17px;
-    position: relative;
-}
 
 .dark-window {
+    visibility: hidden;
     position: absolute;
     width: 100vw;
     height: 100vh;
     background-color: #000a;
-    z-index: 1000;
+    z-index: 800;
+    opacity: 0;
+    transition: all .3s;
 }
 
-.dark-window-cancel, .dark-window {
+.dark-window-cancel {
     visibility: hidden;
+    position: fixed;
+    z-index: 900;
+    top: 40px;
+    left: 290px;
+    opacity: 0;
+    transition: all .3s;
 }
 
 .mobile-toggle {
     .dark-window {
         visibility: visible;
+        opacity: 1;
+        transition: all .3s;
     }
     .dark-window-cancel {
         visibility: visible;
-        position: fixed;
-        left: 75%;
-        top: 5rem;
-        z-index: 1100;
-        transform: rotate(45deg);
-        span {
+        width: 30px;
+        height: 30px;
+        top: 20px;
+        opacity: 1;
+        transition: all .3s;
+        cursor: pointer;
+        &::before{
+            transform: rotate(45deg);
+        }
+        &::after{
+            transform: rotate(-45deg);
+        }
+        &::after,&::before {
+            display: block;
             position: absolute;
-            height: 2px;
-            width: 1.75rem;
+            width: 2px;
+            height: 30px;
+            margin-left: 20px;
+            margin-top: 5px;
             background-color: #fff;
-            // &.cancel-w{}
-            &.cancel-h{
-                transform: rotate(90deg);
-            }
+            content: "";
         }
     }
+    .toggle-header {
+        left: 0;
+    }
+}
+
+.toggle-header {
+    position: fixed;
+    z-index: 1000;
+    padding: 0 15px;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    left: -260px;
+    width: 260px;
+    min-height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,.15);
+    transition: all .35s;
+    transition-delay: .1s;
 }

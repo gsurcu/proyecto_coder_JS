@@ -1,10 +1,18 @@
-menu.addClass("none");
-
 const desplegarMenu = () => {
-    $("body").addClass("mobile-toggle");
+    $("body").toggleClass("mobile-toggle");
 }
 
 menu.click((e) => {
+    e.preventDefault();
+    desplegarMenu();
+});
+
+menuCancel.click((e) => {
+    e.preventDefault();
+    desplegarMenu();
+});
+
+menuCancel2.click((e) => {
     e.preventDefault();
     desplegarMenu();
 });

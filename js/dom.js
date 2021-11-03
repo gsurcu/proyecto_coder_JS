@@ -25,4 +25,6 @@ const usuario = $("#usuario");
 const formProducto = $("#producto");
 const tienda = $("#tienda");
 
-const menu = $("#menu")
+const menu = $("#menu");
+const menuCancel = $(".dark-window-cancel");
+const menuCancel2 = $(".dark-window");
