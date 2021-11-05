@@ -10,30 +10,15 @@ li {
 }
 a {
     text-decoration: none;
+    color: #000;
 }
 
 form {
     margin: 0;
     padding: 0;
     text-align: center;
-    display: flex;
-    flex-direction: column;
-}
-
-
-form input,button {
-    font-size: .9rem;
-    border: 1px solid #0002;
-    border-radius: 6px;
-    box-sizing: border-box;
-    margin: .25rem 0;
-}
-
-#lista-boton {
-    /* padding: .7rem .8rem; */
-    width: 396px;
-    max-width: calc(100% - 10px);
-    margin: .5rem auto;
+    // display: flex;
+    // flex-direction: column;
 }
 
 section button,section input {
@@ -47,16 +32,29 @@ section button:hover {
     padding: .65rem ;
 }
 
+input[type=email], input[type=password], input[type=search] {
+    padding: .5180469716em;
+    outline: 0;
+    color: #222;
+    width: 100%;
+    font-weight: 400;
+}
+
 [type=submit]:not(:disabled), button:not(:disabled) {
     cursor: pointer;
 }
 
 input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-  -webkit-appearance: none; 
-  margin: 0; 
+input[type=number]::-webkit-outer-spin-button {
+    margin: 0; 
 }
 
 form input::placeholder {
     color: #999;
+}
+
+@media only screen and (min-width: 768px) {
+}
+
+@media only screen and (min-width: 992px) {
 }
