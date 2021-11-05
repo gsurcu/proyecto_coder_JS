@@ -1,4 +1,3 @@
-import './logica2';
 
 tienda.addClass("none");
 formProducto.addClass("none");

@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyecto E-commerce</title>
-    <link rel="stylesheet" href="./css/normalize.css">
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proyecto E-commerce</title>
+  <link rel="stylesheet" href="./css/normalize.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
 </head>
 <body>
   <div class="dark-window menu"></div>
@@ -23,32 +23,21 @@
       </div>
       <button class="header-button header-cart">
         <i class="fas fa-shopping-cart fa-lg"></i>
+        <span></span>
       </button>
-      <div class="header-search search"><form class="search-form" action="#" method="get"><input type="search" name="" id=""></form></div>
-      <div class="header-list">
+      <div class="header-search search"><form class="search-form" action="#" method="get"><input type="search" name="" id="" placeholder="Search products..."></form></div>
+      <div class="header-list list">
         <ul>
-          <li>
-            <a href="./sesion.html">Mi Cuenta
-              <div></div>
-            </a>
-          </li>
-          <li>
-            <a href="">Contactanos
-              <div></div>
-            </a>
-          </li>
-          <li>
-            <a href="">Checkout
-              <div></div>
-            </a>
-          </li>
+          <li><a href="./sesion.html"><span>Iniciar Sesion</span></a></li>
+          <li><a href=""><span>Contacto</span></a></li>
+          <li><a href=""><span>Catalogo</span></a></li>
         </ul>
       </div>
     </div>
-    <nav class="second-header">
+    <nav class="second-header list">
       <ul>
-        <li><a href=""><span>Mi cuenta</span></a></li>
-        <li><a href=""><span>Carrito</span></a></li>
+        <li><a href="./sesion.html"><span>Iniciar Sesion</span></a></li>
+        <li><a href=""><span>Contacto</span></a></li>
         <li><a href=""><span>Catalogo</span></a></li>
       </ul>
       <div class="cart"><a href=""><span></span></a></div>
@@ -57,9 +46,9 @@
       <div class="toggle-header-search search">
         <form class="search-form" action="" method="get"><input type="search" name="" id="" placeholder="Search products..."></form>
       </div>
-      <div class="toggle-header-list">
+      <div class="toggle-header-list list">
         <ul>
-          <li><a href="./sesion.html"><span>Mi Cuenta</span></a></li>
+          <li><a href="./sesion.html"><span>Iniciar Sesion</span></a></li>
           <li><a href=""><span>Carrito</span></a></li>
           <li><a href=""><span>Catalogo</span></a></li>
         </ul>
@@ -68,7 +57,66 @@
   </header>
 
   <main>
+    <section>
+      <h2 class="titulo">Productos Destacados</h2>
+    </section>
+    <section class="producto">
+      <div class="producto_item">
+          <img src="./img/qiyi/warrior-3x3x3-speedcube-stickerless.jpg" alt="qiyi-3x3x3-stickerless">
+          <div class="prod">
+            <span class="prod_price">$4.98</span>
+            <p class="prod_name">Qiyi Mofangge Warrior 3x3x3 Speedcube</p>
+            <button class="prod_button agregar" type="button">Comprar</button>
+          </div>
+      </div>
+      <div class="producto_item">
+          <img src="./img/gancube/356-r-3x3x3-stickerless.jpg" alt="gan-356-r-3x3x3-stickerless">
+          <div class="prod">
+            <span class="prod_price">$23.32</span>
+            <p class="prod_name">Gan 356 R 3x3×3 Stickerless</p>
+            <button class="prod_button agregar" type="button">Comprar</button>
+          </div>
+      </div>
+      <div class="producto_item">
+          <img src="./img/moyu/mfjs-axis-stickerless.jpg" alt="mfjs-axis-stickerless">
+          <div class="prod">
+            <span class="prod_price">$3.32</span>
+            <p class="prod_name">MoYu MFJS Axis Stickerless</p>
+            <button class="prod_button agregar" type="button">Comprar</button>
+          </div>
+      </div>
+      <div class="producto_item">
+          <img src="./img/moyu/meilong-3x3x3-stickerless.jpg" alt="meilong-3x3x3-stickerless">
+          <div class="prod">
+            <span class="prod_price">$3.32</span>
+            <p class="prod_name">MoYu MeiLong 3×3 Stickerless</p>
+            <button class="prod_button agregar" type="button">Comprar</button>
+          </div>
+      </div>
+    </section>
   </main>
+
+  <footer class="footer">
+    <div class="footer-contacto">
+        <h3>Redes</h3>
+        <p>Estamos participando activamente en las siguientes redes sociales.</p>
+        <ul class="footer-contacto-lista">
+            <li><a href="">Instagram</a></li>
+            <li><a href="">Facebook</a></li>
+            <li><a href="">Twitter</a></li>
+            <li><a href="">Linkedin</a></li>
+        </ul>
+    </div>
+    <div class="footer-newsletter">
+        <h3>Newsletter</h3>
+        <p>Si quieres estar al tanto de cualquier novedad, no dudes en suscribirte a nuestro newsletter</p>
+        <form class="footer-newsletter-form">
+            <input type="email">
+            <input type="submit">
+        </form>
+    </div>
+</footer>
+
   <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
   <script src="./js/dom.js"></script>
   <script src="./js/objeto.js"></script>
