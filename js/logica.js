@@ -1,70 +1,28 @@
-
 tienda.addClass("none");
-formProducto.addClass("none");
-btnRegistro.addClass("none");
-inputNombre.addClass("none");
-inputApellido.addClass("none");
-inputEdad.addClass("none");
+usuario.addClass("none");
 cerrarSesion.addClass("none");
-linkRegresar.addClass("none");
 
-const mostrarRegistro = () => {
-	btnRegistro.removeClass("none");
-	linkRegistro.addClass("none");
-	btnIngresar.addClass("none");
-  inputNombre.removeClass("none");
-  inputApellido.removeClass("none");
-  inputEdad.removeClass("none");
-	linkRegresar.removeClass("none");
-}
-const ocultarRegistro = () => {
-	btnRegistro.toggleClass("none");
-	linkRegistro.toggleClass("none");
-	btnIngresar.toggleClass("none");
-  inputNombre.toggleClass("none");
-  inputApellido.toggleClass("none");
-  inputEdad.toggleClass("none");
-	linkRegresar.toggleClass("none");
-}
 const crearUsuario = () => {
 
-	let nombre = inputNombre.val();
-    let apellido = inputApellido.val();
-	let clave = inputClave.val();
-    let edad = inputEdad.val();
-    let mail = inputMail.val();
+	let clave = inputClave[1].value;
+    let mail = inputMail[1].value;
 	let tipo = (usuarios == "")? "admin" : "usuario";
 
 
-	if (inputNombre.val().length < 4) {
-		validaciones.innerHTML = "<p>El usuario debe tener 4 caracteres o más</p>"
-		validaciones.style.color = "red"
 
-		if (inputClave.length < 4) {
-
-			validaciones.innerHTML += "<p>La clave debe tener 4 caracteres o más</p>"
-		}
-
-	} else if (inputClave.val().length < 4) {
-
+	if (clave.length < 4) {
+		console.log(clave);
 		validaciones.innerHTML = "La clave debe tener 4 caracteres o más"
 		validaciones.style.color = "red"
 
 	} else {
-		const usuario = new Usuario(nombre,apellido,mail,clave,edad,tipo)
+		const usuario = new Usuario(mail,clave,tipo)
 
 		usuarios.push(usuario)
 		validaciones.style.color = "green"
 		localStorage.setItem("usuarios", JSON.stringify(usuarios))
-		formSesion.trigger("reset");//inputNombre.val("");//inputApellido.val("");//inputClave.val("");//inputEdad.val("");//inputMail.val("");
+		formRegister.trigger("reset");
 		validaciones.innerHTML = "Usuario registrado con éxito"
-        
-        inputNombre.addClass("none");
-        inputApellido.addClass("none");
-        inputEdad.addClass("none");
-		btnIngresar.removeClass("none")
-		btnRegistro.addClass("none")
-		linkRegistro.removeClass("none")
 
 		setTimeout(() => {
 			validaciones.innerHTML = ""
@@ -82,14 +40,15 @@ const login = (mailUsuario,claveUsuario) => {
 			
 			if (chequeoUsuario.tipo == "admin") {
 				completarSelect()
-                usuario.addClass("none");
-                formProducto.removeClass("none");
+                formulario.addClass("none");
 				cerrarSesion.removeClass("none");
-				document.getElementById("titulo").innerHTML = `<h1>Bienvenidx ${chequeoUsuario.nombre.toUpperCase()} </h1>`
+				document.getElementById("titulo").innerHTML = `<h2>Bienvenidx ${chequeoUsuario.mail.toUpperCase()} </h2>`
 			} else {
-				document.getElementById("titulo").innerHTML = `Bienvenidx ${chequeoUsuario.nombre.toUpperCase()}`
+				document.getElementById("titulo").innerHTML = `Bienvenidx ${chequeoUsuario.mail.toUpperCase()}`
 				renderizarTienda()
 				cerrarSesion.removeClass("none");
+				tienda.removeClass("none");
+				usuario.removeClass("none");
 			}
 		} else {
 			validaciones.innerHTML = "La clave ingresada es incorrecta"
@@ -99,8 +58,7 @@ const login = (mailUsuario,claveUsuario) => {
 		validaciones.innerHTML = "El usuario no esta registrado"
 		validaciones.style.color = "red"
 	}
-	formSesion.trigger("reset");
-
+	formLogin.trigger("reset");
 }
 const completarSelect = () => {
 	selectEliminarP.innerHTML = ""
@@ -177,25 +135,14 @@ const eliminarProducto = () => {
 
 }
 const cerrarSesionFunc = ()=>{
-  usuario.removeClass("none");
-  formProducto.addClass("none");
-  tienda.addClass("none");
-  cerrarSesion.addClass("none");
+	usuario.removeClass("none");
+	tienda.addClass("none");
+	cerrarSesion.addClass("none");
 	document.getElementById("titulo").innerHTML = `<h1>Desafio 12</h1>`
 	localStorage.removeItem("usuarioLogueado");
 }
 
 $(function() {
-	linkRegresar.click((e) => {
-		e.preventDefault();
-		ocultarRegistro();
-	});
-	
-	linkRegistro.click((e) => {
-		e.preventDefault();
-		mostrarRegistro();
-	});
-	
 	btnRegistro.click((e) => {
 		e.preventDefault();
 		crearUsuario();

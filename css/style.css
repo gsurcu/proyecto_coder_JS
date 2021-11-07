@@ -30,7 +30,7 @@ button, input {
   padding: .7rem .8rem;
   line-height: 1.5; }
 
-input[type=email], input[type=password], input[type=search] {
+input[type=text], input[type=email], input[type=password], input[type=search] {
   padding: .5180469716em;
   outline: 0;
   color: #222;
@@ -53,20 +53,22 @@ form input::placeholder {
 #header {
   box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1); }
 
-.header-button {
-  font-size: .85rem;
-  display: flex;
-  height: 100%;
-  border: 0;
-  background-color: #fff;
-  flex: 1; }
-
 .primary-header {
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
-  padding: 1.1rem 1.5rem;
+  padding: .6rem 1.5rem;
   justify-content: space-between; }
+
+.header-button {
+  font-size: .85rem;
+  display: flex;
+  height: 100%;
+  background-color: #fff;
+  flex: 1; }
+  .header-button button {
+    border: 0;
+    background-color: #fff; }
 
 .header-menu .bar-icon {
   display: flex;
@@ -122,7 +124,7 @@ form input::placeholder {
   background-color: #000a;
   z-index: 800;
   opacity: 0;
-  transition: all .3s; }
+  transition: opacity .6s,visibility .6s; }
 
 .dark-window-cancel {
   visibility: hidden;
@@ -185,6 +187,52 @@ form input::placeholder {
     padding-top: 1rem; }
     .toggle-header-list ul li {
       padding: .5rem 0; }
+
+.mobile-cart {
+  overflow-y: hidden; }
+  .mobile-cart .dark-window {
+    visibility: visible;
+    opacity: 1;
+    transition: all .3s; }
+  .mobile-cart .toggle-cart {
+    right: 0; }
+
+.toggle-cart {
+  overflow: hidden;
+  position: fixed;
+  z-index: 1020;
+  top: 0;
+  right: -370px;
+  left: auto;
+  width: 370px;
+  width: 315px;
+  height: 100%;
+  background-color: #fff;
+  transition: all .5s;
+  padding: .75rem 1rem; }
+  .toggle-cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+  .toggle-cart-head {
+    font-size: .85rem;
+    font-weight: 600; }
+  .toggle-cart-cancel {
+    width: 15px;
+    height: 15px;
+    cursor: pointer; }
+    .toggle-cart-cancel::before {
+      transform: rotate(45deg); }
+    .toggle-cart-cancel::after {
+      transform: rotate(-45deg); }
+    .toggle-cart-cancel::after, .toggle-cart-cancel::before {
+      display: block;
+      position: absolute;
+      width: 2px;
+      height: 16px;
+      margin-left: 8px;
+      background-color: #000;
+      content: ""; }
 
 .footer {
   display: flex;
@@ -283,6 +331,9 @@ form input::placeholder {
       flex-direction: column;
       flex: 1 1;
       justify-content: space-between; }
+
+#formulario form {
+  padding: 0 1rem; }
 
 @media only screen and (min-width: 768px) {
   .footer_contacto {

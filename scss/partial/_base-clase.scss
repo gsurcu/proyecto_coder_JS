@@ -7,23 +7,26 @@
     box-shadow:0 3px 15px rgba(0, 0, 0, 0.1);
 }
 
-.header-button {
-    font-size: .85rem;
-    display: flex;
-    height: 100%;
-    border: 0;
-    background-color: #fff;
-    flex: 1;
-}
-
 .primary-header { 
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
-    padding: 1.1rem 1.5rem;
+    padding: .6rem 1.5rem;
     justify-content: space-between;
 }
+
 .header {
+    &-button {
+        font-size: .85rem;
+        display: flex;
+        height: 100%;
+        background-color: #fff;
+        flex: 1;
+        button {
+            border: 0;
+            background-color: #fff;
+        }
+    }
     &-menu {
         .bar-icon {
             display: flex;
@@ -88,7 +91,7 @@
     background-color: #000a;
     z-index: 800;
     opacity: 0;
-    transition: all .3s;
+    transition: opacity .6s,visibility .6s;
 }
 
 .dark-window-cancel {
@@ -166,6 +169,60 @@
     }
 }
 
+.mobile-cart {
+    overflow-y: hidden;
+    .dark-window {
+        visibility: visible;
+        opacity: 1;
+        transition: all .3s;
+    }
+    .toggle-cart {
+        right: 0;
+    }
+}
+.toggle-cart {
+    overflow: hidden;
+    position: fixed;
+    z-index: 1020;
+    top: 0;
+    right: -370px;
+    left: auto;
+    width: 370px;
+    width: 315px;
+    height: 100%;
+    background-color: #fff;
+    transition: all .5s;
+    padding: .75rem 1rem;
+    &-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &-head {
+        font-size: .85rem;
+        font-weight: 600;
+    }
+    &-cancel {
+        width: 15px;
+        height: 15px;
+        cursor: pointer;
+        &::before{
+            transform: rotate(45deg);
+        }
+        &::after{
+            transform: rotate(-45deg);
+        }
+        &::after,&::before {
+            display: block;
+            position: absolute;
+            width: 2px;
+            height: 16px;
+            margin-left: 8px;
+            background-color: #000;
+            content: "";
+        }
+    }
+}
 
 .footer{
     display: flex;
@@ -296,6 +353,11 @@ margin-bottom: .3rem;
     }
 }
 }
+
+#formulario form {
+    padding: 0 1rem;
+}
+
 @media only screen and (min-width: 768px) {
     .footer_contacto {
         flex: 2 2;

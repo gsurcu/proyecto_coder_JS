@@ -10,21 +10,25 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
 </head>
 <body>
-  <div class="dark-window menu"></div>
+  <div class="dark-window"></div>
   <div class="dark-window-cancel menu"></div>
   <header id="header" class="header">
     <div class="primary-header">
-      <button class="header-button header-menu menu">
-        <i class="fas fa-bars fa-lg"></i>
-        <span class="bar-text">menu</span>
-      </button>
+      <div class="header-button header-menu">
+        <button class="menu" id="boton-menu">
+          <i class="fas fa-bars fa-lg"></i>
+          <span class="bar-text">menu</span>
+        </button>
+      </div>
       <div class="header-titulo">
         <a href="./index.html"><span id="titulo">Cube</span></a>
       </div>
-      <button class="header-button header-cart">
-        <i class="fas fa-shopping-cart fa-lg"></i>
-        <span></span>
-      </button>
+      <div class="header-button header-cart">
+        <button class="cart">
+          <i class="fas fa-shopping-cart fa-lg"></i>
+          <span></span>
+        </button>
+      </div>
       <div class="header-search search"><form class="search-form" action="#" method="get"><input type="search" name="" id="" placeholder="Search products..."></form></div>
       <div class="header-list list">
         <ul>
@@ -54,14 +58,20 @@
         </ul>
       </div>
     </div>
+    <div class="toggle-cart">
+      <div class="toggle-cart-header">
+        <div class="toggle-cart-head">Shopping Cart</div>
+        <div class="toggle-cart-cancel cart"></div>
+      </div>
+    </div>
   </header>
 
   <main>
     <section>
       <h2 class="titulo">Productos Destacados</h2>
     </section>
-    <section class="producto">
-      <div class="producto_item">
+    <section class="producto destacado">
+      <!-- <div class="producto_item">
           <img src="./img/qiyi/warrior-3x3x3-speedcube-stickerless.jpg" alt="qiyi-3x3x3-stickerless">
           <div class="prod">
             <span class="prod_price">$4.98</span>
@@ -92,28 +102,28 @@
             <p class="prod_name">MoYu MeiLong 3×3 Stickerless</p>
             <button class="prod_button agregar" type="button">Comprar</button>
           </div>
-      </div>
+      </div> -->
     </section>
   </main>
 
   <footer class="footer">
     <div class="footer-contacto">
-        <h3>Redes</h3>
-        <p>Estamos participando activamente en las siguientes redes sociales.</p>
-        <ul class="footer-contacto-lista">
-            <li><a href="">Instagram</a></li>
-            <li><a href="">Facebook</a></li>
-            <li><a href="">Twitter</a></li>
-            <li><a href="">Linkedin</a></li>
-        </ul>
+      <h3>Redes</h3>
+      <p>Estamos participando activamente en las siguientes redes sociales.</p>
+      <ul class="footer-contacto-lista">
+          <li><a href="">Instagram</a></li>
+          <li><a href="">Facebook</a></li>
+          <li><a href="">Twitter</a></li>
+          <li><a href="">Linkedin</a></li>
+      </ul>
     </div>
     <div class="footer-newsletter">
-        <h3>Newsletter</h3>
-        <p>Si quieres estar al tanto de cualquier novedad, no dudes en suscribirte a nuestro newsletter</p>
-        <form class="footer-newsletter-form">
-            <input type="email">
-            <input type="submit">
-        </form>
+      <h3>Newsletter</h3>
+      <p>Si quieres estar al tanto de cualquier novedad, no dudes en suscribirte a nuestro newsletter</p>
+      <form class="footer-newsletter-form">
+          <input type="email">
+          <input type="submit">
+      </form>
     </div>
 </footer>
 

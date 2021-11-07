@@ -1,10 +1,8 @@
-const inputNombre = $("#nombre");
-const inputApellido = $("#apellido");
-const inputMail = $("#mail");
-const inputEdad = $("#edad");
-const inputClave = $("#clave");
+const inputMail = $(".mail");
+const inputClave = $(".clave");
 
-const formSesion = $("#formSesion");
+const formLogin = $("#formLogin");
+const formRegister = $("#formRegister")
 const btnIngresar = $("#btnIngresar")
 const btnRegistro = $("#btnRegistro")
 
@@ -15,14 +13,15 @@ const selectEliminarP = $("#eliminarProductos")
 const btnAgregarProducto = $("#btnAgregar")
 const btnEliminarProducto = $("#btnEliminar")
 
-const linkRegistro = $("#registrarse")
-const linkRegresar = $("#regresar")
 const cerrarSesion = $("#cerrarSesion")
 
 const validaciones = document.getElementById("validaciones")
 
 const usuario = $("#usuario");
-const formProducto = $("#producto");
+const formulario = $("#formulario");
 const tienda = $("#tienda");
 
 const menu = $(".menu");
+const cart = $(".cart");
+const darkWindow = $(".dark-window");
+const agregar = $(".agregar");
