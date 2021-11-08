@@ -10,7 +10,12 @@ const removerDarkWindow = () => {
 	$("body").removeClass("mobile-toggle");
 }
 
-const agregarCarrito = (producto) => {
+const agregarCarrito = (product) => {
+	const dato = parseInt(product);
+
+	const encontrado = productos.find(elemento => elemento.id === dato);
+
+	carrito.push(encontrado)
 	desplegarCarrito();
 }
 
@@ -23,14 +28,14 @@ const listaProductos = (productos,contenedor) => {
 				<div class="prod">
 					<span class="prod_price">$${producto.precio}</span>
 					<p class="prod_name">${producto.nombre}</p>
-					<button class="prod_button agregar" id="carrito-${producto.id}" type="button">Comprar</button>
+					<button class="prod_button agregar" id="${producto.id}" type="button">Comprar</button>
 				</div>
 			</div>`);
 		}
 	}
 }
-listaProductos(productosInicio,".destacado");
-
+listaProductos(productosDestacado,".destacado");
+listaProductos(productos,".catalogo");
 
 menu.click((e) => {
 	e.preventDefault();
@@ -43,8 +48,8 @@ cart.click((e) => {
 darkWindow.click((e) => {
 	e.preventDefault();
 	removerDarkWindow();
-})
-agregar.click((e) => {
+});
+$(".agregar").click((e) => {
 	e.preventDefault();
 	agregarCarrito(e.target.id);
 });

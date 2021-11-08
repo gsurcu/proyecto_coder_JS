@@ -310,7 +310,7 @@ form input::placeholder {
   margin-bottom: .3rem; }
   .producto_item {
     border-radius: .3rem;
-    margin: .3rem .8rem;
+    padding: 0 .5rem;
     display: flex;
     flex-direction: column;
     max-width: 50%;
@@ -318,15 +318,14 @@ form input::placeholder {
     flex: 1 1; }
     .producto_item img {
       object-fit: cover;
-      max-height: 10rem;
-      max-width: 12rem;
+      max-width: 100%;
       align-self: center; }
     .producto_item p {
       margin: 0; }
     .producto_item .prod {
       margin: 0 auto;
       padding: .6rem 0 .7rem;
-      max-width: 12rem;
+      width: 90%;
       display: flex;
       flex-direction: column;
       flex: 1 1;
@@ -341,10 +340,13 @@ form input::placeholder {
   .footer_newsletter {
     flex: 3 3; }
   .producto_item {
-    max-width: 25%;
-    min-width: 20%; } }
+    max-width: 33.3%;
+    min-width: 32%; } }
 
 @media only screen and (min-width: 992px) {
+  .producto_item {
+    max-width: 24.5%;
+    min-width: 24%; }
   .toggle-header, .header-menu {
     display: none; }
   .second-header, .header-search {

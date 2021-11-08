@@ -1,5 +1,6 @@
 const inputMail = $(".mail");
 const inputClave = $(".clave");
+const inputUserName = $(".username");
 
 const formLogin = $("#formLogin");
 const formRegister = $("#formRegister")
